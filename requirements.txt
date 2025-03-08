@@ -13,3 +13,4 @@ langgraph-cli
 pypdf
 langchain_text_splitters
 dotenv
+streamlit
