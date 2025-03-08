@@ -289,6 +289,7 @@ if not OPENAI_API_KEY.startswith("sk-"):
     st.warning("Please enter your OpenAI API key!", icon="⚠")
 if submitted and OPENAI_API_KEY.startswith("sk-"):
     # Run the graph until the first interruption
+    os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
     with st.spinner("Generating..."):
         for event in graph.stream(
             {"subject": subject, "pdf_file": pdf_file, "num": num},
