@@ -253,12 +253,9 @@ import os
 import streamlit as st
 import tempfile
 
-is_api = False
 thread = {"configurable": {"thread_id": "1"}}
-qas_show = []
 
 # current_path = os.getcwd()
-
 # path = current_path + pdf_file
 
 st.title("GENERATE Q&As w/ solution")
