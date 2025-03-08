@@ -5,6 +5,8 @@ from langchain_openai import ChatOpenAI
 # os.getenv("OPENAI_API_KEY")
 os.getenv("TAVILY_API_KEY")
 
+OPENAI_API_KEY = st.sidebar.text_input("OpenAI API Key", type="password")
+
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 
 from typing import List, Annotated
@@ -260,7 +262,6 @@ thread = {"configurable": {"thread_id": "1"}}
 
 st.title("GENERATE Q&As w/ solution")
 
-OPENAI_API_KEY = st.sidebar.text_input("OpenAI API Key", type="password")
 
 with st.form("form"):
     subject = st.text_input(
