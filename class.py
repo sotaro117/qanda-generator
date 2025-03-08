@@ -1,6 +1,8 @@
 import os
 from dotenv import load_dotenv
 from langchain_openai import ChatOpenAI
+import streamlit as st
+
 
 # os.getenv("OPENAI_API_KEY")
 os.getenv("TAVILY_API_KEY")
@@ -252,7 +254,6 @@ graph = builder.compile(interrupt_before=["human_feedback_check"], checkpointer=
 # ------------------------------------------------------------------ #
 ### FRONTEND SECTION && RUN ###
 import os
-import streamlit as st
 import tempfile
 
 thread = {"configurable": {"thread_id": "1"}}
