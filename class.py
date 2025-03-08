@@ -9,7 +9,7 @@ os.getenv("TAVILY_API_KEY")
 
 OPENAI_API_KEY = st.sidebar.text_input("OpenAI API Key", type="password")
 
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0, api_key=OPENAI_API_KEY)
+llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 
 from typing import List, Annotated
 from typing_extensions import TypedDict
