@@ -8,6 +8,7 @@ import streamlit as st
 os.getenv("TAVILY_API_KEY")
 
 OPENAI_API_KEY = st.sidebar.text_input("OpenAI API Key", type="password")
+st.secrets["OPENAI_API_KEY"] = OPENAI_API_KEY
 
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
 
@@ -289,7 +290,7 @@ if not OPENAI_API_KEY.startswith("sk-"):
     st.warning("Please enter your OpenAI API key!", icon="⚠")
 if submitted and OPENAI_API_KEY.startswith("sk-"):
     # Run the graph until the first interruption
-    os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
+
     with st.spinner("Generating..."):
         for event in graph.stream(
             {"subject": subject, "pdf_file": pdf_file, "num": num},
