@@ -8,9 +8,9 @@ import streamlit as st
 os.getenv("TAVILY_API_KEY")
 
 OPENAI_API_KEY = st.sidebar.text_input("OpenAI API Key", type="password")
-st.secrets["OPENAI_API_KEY"] = OPENAI_API_KEY
+os.getenv["OPENAI_API_KEY"] = OPENAI_API_KEY
 
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0)
+llm = ChatOpenAI(model="gpt-4o-mini", temperature=0, OPENAI_API_KEY=OPENAI_API_KEY)
 
 from typing import List, Annotated
 from typing_extensions import TypedDict
