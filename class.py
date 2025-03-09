@@ -331,7 +331,6 @@ if submitted and OPENAI_API_KEY.startswith("sk-"):
         qas = final_state.values.get("preps")
 
         for qa in qas:
-            qas_show.append(qa)
             # print("Final Q&As")
             # print(f"Question: {qa.question}")
             # print(f"Answer: {qa.answer}")
