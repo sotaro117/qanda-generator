@@ -8,7 +8,7 @@ import streamlit as st
 os.getenv("TAVILY_API_KEY")
 
 OPENAI_API_KEY = st.sidebar.text_input("OpenAI API Key", type="password")
-os.getenv["OPENAI_API_KEY"] = OPENAI_API_KEY
+os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
 
 llm = ChatOpenAI(model="gpt-4o-mini", temperature=0, OPENAI_API_KEY=OPENAI_API_KEY)
 
